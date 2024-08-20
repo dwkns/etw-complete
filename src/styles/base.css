@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
+
+@font-face {
+    font-family: 'Plex';
+    font-display: optional;
+    src: url('/fonts/IBMPlexSans.var.latin-subset.woff2')
+        format('woff2 supports variations'),
+      url('/fonts/IBMPlexSans.var.latin-subset.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-stretch: 25% 151%;
+    unicode-range: U+000-5FF;
+  }
+  
 @tailwind utilities;

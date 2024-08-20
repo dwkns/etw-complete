@@ -1,0 +1,18 @@
+---
+title: Page title
+layout: _page_skeleton.njk
+---
+{%- from "_njk_components/components.njk" import component  -%}
+
+<section class="mt-12">
+  <div class="px-4 mx-auto">
+    {{ component('simple-block', {
+        title: 'Title using Simple Block component',
+       styles: 'text-5xl font-thin'
+      })
+    }}
+    <p  class="text-5xl">Just a paragraph</p>
+    
+     <h1 class="text-red-600" >Hello World I'm here {{site.currentYear}} {{title}}</h1>
+  </div>
+</section>
