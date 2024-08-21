@@ -1,5 +1,6 @@
 # ignore node/grunt dependency directories
 node_modules/
+sanity/node_modules/
 
 # Ignore build directories.
 /build
