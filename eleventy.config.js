@@ -1,4 +1,7 @@
 export default async function(eleventyConfig) {
+
+  eleventyConfig.addPassthroughCopy({ "./sanity/dist": "./sanity" });
+
     return {
         dir: {
           input: "src",
