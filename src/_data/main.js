@@ -17,4 +17,4 @@ const client = createClient({
 })
 
 
-export default await client.fetch(`*[_type == "event"]{ name }`)
+export default await client.fetch(`*[_type == "event"]{ name }`)  

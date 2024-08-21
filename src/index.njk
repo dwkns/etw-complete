@@ -12,9 +12,11 @@ layout: _page_skeleton.njk
       })
     }}
     <p  class="text-5xl">Just a paragraph</p>
+   {% console main %}
      {% for names in main %}
      <p>{{names.name}} <- from Sanity</p> 
      {% endfor %}
      <h1 class="text-red-600" >Hello World I'm here {{site.currentYear}} {{title}}</h1>
   </div>
 </section>
+ 
