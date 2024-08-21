@@ -4,6 +4,8 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
+
+
   name: 'default',
   title: 'etw-complete',
 
@@ -15,7 +17,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-  project: {
-    basePath: '/sanity/'
-  },
+  
 })
