@@ -1,7 +1,8 @@
+---js
+const title="Page title"
+const layout="_page_skeleton.njk"
 ---
-title: Page title
-layout: _page_skeleton.njk
----
+
 {%- from "_njk_components/components.njk" import component  -%}
 
 <section class="mt-12">
@@ -17,6 +18,12 @@ layout: _page_skeleton.njk
      <p>{{names.name}} <- from Sanity</p> 
      {% endfor %}
      <h1 class="text-red-600" >Hello World I'm here {{site.currentYear}} {{title}}</h1>
+    <h3 class="text-2xl font-bold">Dynamic Debug</h3>
+     <p class="">{{title}} < Frontmatter</p>
+     <p class="">{{layout}} < Frontmatter</p>
+     <p class="">{{site.currentYear}} < Data Cascade</p>
+     
+
   </div>
 </section>
  
