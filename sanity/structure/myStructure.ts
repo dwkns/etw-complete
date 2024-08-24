@@ -1,15 +1,56 @@
-
+import { BiBed , BiListUl, BiSolidCoffee} from "react-icons/bi";
 import type { StructureResolver } from 'sanity/structure'
 
+import {createClient} from '@sanity/client'
+
+
+
 export const myStructure: StructureResolver = (S, context) => {
-    console.log(context) // returns { currentUser, dataset, projectId, schema, getClient, documentStore }
+    // console.log(context) // returns { currentUser, dataset, projectId, schema, getClient, documentStore }
+
+    // const ids =  client.fetch(`*[_type == 'idea']._id`)
+    // const a = S.listItem()
     return S.list().title('Site Content').items([
 
-        ...S.documentTypeListItems().filter( 
-            (item) => item.getId() !== 'siteData',
-        ),
+        ...S.documentTypeListItems().filter(
+            (listItem) => !['siteData', 'roomFeatures','rooms'].includes(listItem.getId()!)
+          ),
+        
+          S.listItem()
+          .title('All Rooms')
+          .child(
+            /* Create a list of all posts */
+            S.documentList()
+              .title('All rooms')
+              .filter('_type == "rooms"')
+          ),
 
-        S.divider(), 
+
+
+        
+        S.listItem().title('Rooms').icon(BiBed)
+          .child(
+            S.list()
+               .id('roomsList')
+                .items([
+                    S.documentTypeListItem('rooms').title('Rooms'),
+                    S.divider(), 
+                    S.documentTypeListItem('roomFeatures').title('Room Features'),
+                    
+                ])
+            )
+          ,
+
+          
+           
+
+    
+          
+       
+          
+  
+
+        
 
         S.listItem()
             .id('siteData')
